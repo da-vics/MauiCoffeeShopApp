@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CoffeeShop.Views.OrderSummaryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:CoffeeShop.ViewModels"
+    Background="#1A1A1A"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.BindingContext>
+        <vm:OrderSummaryViewModel />
+    </ContentPage.BindingContext>
+
+
+    <Grid
+        Padding="10"
+        RowDefinitions="auto,auto,auto,auto,auto"
+        RowSpacing="10">
+
+        <ImageButton
+            Margin="5"
+            Command="{Binding GoHomeCommand}"
+            HeightRequest="30"
+            HorizontalOptions="End"
+            Source="home.png"
+            WidthRequest="30" />
+
+        <Label
+            Grid.Row="1"
+            FontAttributes="Bold"
+            FontFamily="HandleeFont"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="Thank your for your order"
+            TextColor="White"
+            VerticalOptions="Start" />
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Cart}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Padding="5"
+                        Background="#212121"
+                        Orientation="Horizontal"
+                        Spacing="10">
+
+                        <Image
+                            Margin="5,0,0,0"
+                            HeightRequest="70"
+                            Source="{Binding Item.ImagePath}"
+                            VerticalOptions="Center"
+                            WidthRequest="70" />
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="{Binding Item.Name}"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Margin="10,10,0,10"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Start"
+                            Text="{Binding TotalPrice, StringFormat='{}{0:c}'}"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Margin="10,10,0,10"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Start"
+                            Text="{Binding Quntity, StringFormat='x{0}'}"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <StackLayout
+            Grid.Row="3"
+            Margin="5,0,10,20"
+            Padding="5"
+            Spacing="10">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="{Binding User.UserName, StringFormat='Name: {0}'}"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="{Binding User.PhoneNumber, StringFormat='PhoneNumber: {0}'}"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="{Binding TotalCost, StringFormat='Total Amount {0:c}'}"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <Label
+            Grid.Row="4"
+            FontAttributes="Bold"
+            FontFamily="HandleeFont"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="Come Back Soon!"
+            TextColor="White" />
+
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="CoffeeShop.Views.MenuShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:CoffeeShop.Views"
+    Background="#0a0a0f"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#0a0a0f"
+    Shell.TabBarForegroundColor="White"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarUnselectedColor="LightGray">
+
+    <ShellContent ContentTemplate="{DataTemplate views:HomePage}" Route="HomePage" />
+
+</Shell>

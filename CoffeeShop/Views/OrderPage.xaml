@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CoffeeShop.Views.OrderPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:CoffeeShop.ViewModels"
+    Background="#1A1A1A"
+    Shell.ForegroundColor="LightGray"
+    Shell.NavBarIsVisible="True">
+
+    <ContentPage.BindingContext>
+        <vm:OrderViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid Padding="10" RowDefinitions="2*,auto,2*">
+
+        <Image
+            Grid.Row="0"
+            Margin="10"
+            HorizontalOptions="Center"
+            Source="{Binding Item.ImagePath}"
+            VerticalOptions="Center" />
+
+        <Label
+            Grid.Row="1"
+            Margin="20,5,0,0"
+            FontAttributes="Bold"
+            FontFamily="HandleeFont"
+            FontSize="30"
+            Text="{Binding Item.Name}"
+            TextColor="White"
+            VerticalOptions="Start" />
+
+        <StackLayout
+            Grid.Row="2"
+            Margin="20,5,20,0"
+            VerticalOptions="Start">
+
+            <Grid>
+
+                <Border
+                    Padding="10"
+                    Background="#1A1A1A"
+                    HorizontalOptions="Start"
+                    Stroke="gray"
+                    StrokeThickness="1">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20,20,20,20" />
+                    </Border.StrokeShape>
+
+                    <Grid WidthRequest="130">
+                        <Button
+                            Margin="5,0,10,0"
+                            Padding="8"
+                            BackgroundColor="Transparent"
+                            Command="{Binding ChangeQCommand}"
+                            CommandParameter="-"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="Start"
+                            Text="-"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Margin="10,0,10,0"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            Text="{Binding Quantity}"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Margin="10,0,5,0"
+                            Padding="8"
+                            BackgroundColor="Transparent"
+                            Command="{Binding ChangeQCommand}"
+                            CommandParameter="+"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="End"
+                            Text="+"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Border>
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="End"
+                    Text="{Binding TotalCost, StringFormat='{}{0:c}'}"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <Label
+                Margin="10,10,0,10"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="{Binding Item.Price, StringFormat='{}{0:c}'}"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+            <Label
+                Margin="10,20,0,10"
+                FontAttributes="Bold"
+                FontFamily="HandleeFont"
+                FontSize="20"
+                Text="{Binding Item.Description}"
+                TextColor="LightGray"
+                VerticalOptions="Start" />
+
+            <Button
+                Margin="0,10,0,0"
+                Padding="15"
+                Background="#212121"
+                Command="{Binding AddToCartCommand}"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="Add to Cart"
+                TextColor="White" />
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
