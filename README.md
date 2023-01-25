@@ -1,19 +1,29 @@
 ## **Start Page**
 
-<img src="ProjectImages/start.png" style="display: block; margin: 0 auto"  width="150" >
+<div align="middle">
+<img   src="ProjectImages/start.png" width="150" >
+</div>
 
 ## **MenuPage**
 
-<img src="ProjectImages/menu.png" style="display: block; margin: 0 auto"  width="150" >
+<div align="middle">
+<img src="ProjectImages/menu.png" width="150" >
+</div>
 
 ## **Add to Cart**
 
-<img src="ProjectImages/addToCart.png" style="display: block; margin: 0 auto"  width="150" >
+<div align="middle">
+<img src="ProjectImages/addToCart.png" width="150" >
+</div>
 
 ## **Cart**
 
-<img src="ProjectImages/cart.png" style="display: block; margin: 0 auto"  width="150" >
+<div align="middle">
+<img src="ProjectImages/cart.png" width="150" >
+</div>
 
 ## **Summary Page**
 
-<img src="ProjectImages/summary.png" style="display: block; margin: 0 auto"  width="150" >
+<div align="middle">
+<img src="ProjectImages/summary.png" width="150" >
+</div>
