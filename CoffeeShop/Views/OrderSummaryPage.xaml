@@ -31,7 +31,7 @@
             FontFamily="HandleeFont"
             FontSize="30"
             HorizontalOptions="Center"
-            Text="Thank your for your order"
+            Text="Thank you for your order"
             TextColor="White"
             VerticalOptions="Start" />
 

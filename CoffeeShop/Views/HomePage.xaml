@@ -17,24 +17,22 @@
 
     <Grid
         Padding="5"
-        RowDefinitions="10,auto,*"
+        RowDefinitions="auto,*"
         RowSpacing="5">
 
-        <Button
-            Grid.Row="1"
-            Margin="5,10,0,0"
-            Background="{StaticResource Yellow100Accent}"
+        <ImageButton
+            Grid.Row="0"
+            Margin="0,0,10,0"
+            Padding="0"
             Command="{Binding GoToCartCommand}"
-            FontAttributes="Bold"
-            FontSize="16"
             HorizontalOptions="End"
-            Text="Cart"
-            TextColor="White"
-            VerticalOptions="Start" />
+            Source="cart.png"
+            VerticalOptions="Start"
+            WidthRequest="40" />
 
         <CollectionView
-            Grid.Row="2"
-            Margin="10"
+            Grid.Row="1"
+            Margin="5,0,5,0"
             ItemsSource="{Binding Products}"
             SelectionChangedCommand="{Binding ItemSelectCommand, Mode=TwoWay}"
             VerticalScrollBarVisibility="Default">
